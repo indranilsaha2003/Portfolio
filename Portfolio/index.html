@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indranil | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="grid-overlay"></div>
+    <div class="glowing-line"></div>
+    <div class="glowing-line"></div>
+    <div class="glowing-line"></div>
+    <div class="glowing-line"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="landing-page">
+        <div class="left-section">
+            <h1>Hey visitors!<br>My name <br>is <span class="highlight-name">Indranil Saha</span></h1>
+            <br>
+            <h3>I am
+                <div class="typewriter">
+                    <span id="typewriter-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+            </h3>
+        </div>
+        <div class="right-section">
+            <div class="image-container">
+                <img src="Dp-2-nobg.png" alt="Your Picture" class="profile-picture">
+            </div>
+            <div class="icon-container">
+                <ion-icon name="logo-html5" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-css3" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-python" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-react" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-nodejs" class="animated-icon"></ion-icon>
+                <ion-icon name="code-slash" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-javascript" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-github" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-angular" class="animated-icon"></ion-icon>
+                <ion-icon name="server-outline" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-npm" class="animated-icon"></ion-icon>
+                <ion-icon name="terminal-outline" class="animated-icon"></ion-icon>
+                <ion-icon name="git-branch-outline" class="animated-icon"></ion-icon>
+                <ion-icon name="cloud-outline" class="animated-icon"></ion-icon>
+                <ion-icon name="logo-docker" class="animated-icon"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+    <button class="nav-button" onclick="toggleNavBar()">
+        <ion-icon name="apps-outline"></ion-icon>
+        Discover
+    </button>
+    <div class="nav-bar" id="navBar">
+        <div class="left-part">
+            <a href="#" data-tooltip="Home"><ion-icon name="home"></ion-icon></a>
+            <a href="projects.html" data-tooltip="Projects"><ion-icon name="file-tray-stacked"></ion-icon></a>
+            <a href="experience.html" data-tooltip="Experience"><ion-icon name="briefcase"></ion-icon></a>
+            <a href="RESUME.pdf" target="_blank" data-tooltip="Resume"><ion-icon name="document"></ion-icon></a>
+            <a href="https://www.linkedin.com/in/indranil-saha-96256025b/" target="_blank"
+                data-tooltip="Linkedin"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="https://github.com/indranilsaha2003" target="_blank" data-tooltip="GitHub"><ion-icon
+                    name="logo-github"></ion-icon></a>
+            <ion-icon name="close-circle-outline" class="nav-close" onclick="toggleNavBar()"></ion-icon>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

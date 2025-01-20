@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indranil | Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="projects-section" id="projects">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-container">
+            <!-- Project Card 1 -->
+            <div class="project-card" onclick="openProjectModal(0)">
+                <div class="project-content">
+                    <h3>Museum Ticket Booking Chatbot</h3>
+                    <p>A chatbot system for museums that simplifies ticket reservations, provides instant visitor assistance, and manages queries efficiently.</p>
+                    <div class="project-tech">
+                        <span>React+Vite</span>
+                        <span>Python</span>
+                        <span>CSS</span>
+                        <span>Node.js</span>
+                        <span>JSON</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card" onclick="openProjectModal(1)">
+                <div class="project-content">
+                    <h3>Timetable Generator</h3>
+                    <p>An automated system that generates optimized, conflict-free schedules for educational institutions with a user-friendly drag-and-drop interface.</p>
+                    <div class="project-tech">
+                        <span>React+Vite</span>
+                        <span>Typescript</span>
+                        <span>Node.js</span>
+                        <span>SQL</span>
+                        <span>Tailwind CSS</span>
+                        <span>JSON</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card" onclick="openProjectModal(2)">
+                <div class="project-content">
+                    <h3>Travel & Tourism Website</h3>
+                    <p>A platform for discovering destinations, planning trips, and booking travel services with guides, maps, and user reviews.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Javascript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-card" onclick="openProjectModal(3)">
+                <div class="project-content">
+                    <h3>Functional Calculator</h3>
+                    <p>A simple, user-friendly calculator for performing basic arithmetic operations with a clean and reliable interface.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Javascript</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Project Card 5 -->
+            <div class="project-card" onclick="openProjectModal(4)">
+                <div class="project-content">
+                    <h3>Shopping cart functionality</h3>
+                    <p>A responsive e-commerce shopping cart with product listing, real-time price calculations, and an intuitive checkout process.</p>
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Javascript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5
+            <div class="project-card" onclick="openProjectModal(4)">
+                <div class="project-content">
+                    <h3>Project Title 5</h3>
+                    <p>Description of your fifth project goes here. Explain what you built and what technologies you used.</p>
+                    <div class="project-tech">
+                        <span>Vue.js</span>
+                        <span>Express</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Add Modal Container -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="slider-container">
+                <div class="slider">
+                    <!-- Images will be inserted here by JavaScript -->
+                </div>
+                <button class="slider-btn prev">&#10094;</button>
+                <button class="slider-btn next">&#10095;</button>
+            </div>
+            <div class="project-details">
+                <h2 class="modal-title"></h2>
+                <p class="modal-description"></p>
+                <div class="modal-tech"></div>
+                <div class="modal-links"></div>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-home" onclick="window.location.href='index.html'">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+        Home
+    </button>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1465 @@
+/* Update font for entire site */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Remove redundant font-family from body */
+body {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Background base */
+body {
+    background: #0a0a0a;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated background gradient */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 50% 50%, 
+            rgba(0, 188, 212, 0.1) 0%, 
+            rgba(33, 150, 243, 0.05) 25%, 
+            transparent 50%),
+        radial-gradient(circle at 80% 20%, 
+            rgba(124, 77, 255, 0.05) 0%, 
+            transparent 35%),
+        radial-gradient(circle at 20% 80%, 
+            rgba(0, 188, 212, 0.08) 0%, 
+            transparent 35%);
+    z-index: -2;
+    animation: pulseGlow 8s ease-in-out infinite;
+}
+
+/* Animated grid */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(90deg, rgba(0, 188, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(rgba(0, 188, 212, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    transform-origin: center;
+    animation: gridFloat 20s linear infinite;
+}
+
+/* Glowing lines */
+.glowing-line {
+    position: fixed;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 188, 212, 0.2) 50%, 
+        transparent 100%);
+    z-index: -1;
+}
+
+/* Create multiple glowing lines */
+.glowing-line:nth-child(1) { top: 20%; animation: lineFloat 8s linear infinite; }
+.glowing-line:nth-child(2) { top: 40%; animation: lineFloat 12s linear infinite reverse; }
+.glowing-line:nth-child(3) { top: 60%; animation: lineFloat 10s linear infinite; }
+.glowing-line:nth-child(4) { top: 80%; animation: lineFloat 14s linear infinite reverse; }
+
+/* Floating orbs */
+.orb {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center,
+        rgba(0, 188, 212, 0.1) 0%,
+        rgba(0, 188, 212, 0.05) 30%,
+        transparent 70%);
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.orb:nth-child(1) {
+    top: 20%;
+    left: 20%;
+    animation: orbFloat 15s ease-in-out infinite;
+}
+
+.orb:nth-child(2) {
+    top: 60%;
+    right: 20%;
+    animation: orbFloat 18s ease-in-out infinite reverse;
+}
+
+.orb:nth-child(3) {
+    bottom: 10%;
+    left: 30%;
+    animation: orbFloat 20s ease-in-out infinite;
+}
+
+/* Enhance existing elements */
+.highlight-name {
+    position: relative;
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+.highlight-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #00bcd4, 
+        transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes gridFloat {
+    0% {
+        transform: perspective(500px) rotateX(5deg) translateY(0);
+    }
+    50% {
+        transform: perspective(500px) rotateX(5deg) translateY(-25px);
+    }
+    100% {
+        transform: perspective(500px) rotateX(5deg) translateY(0);
+    }
+}
+
+@keyframes lineFloat {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes orbFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, -30px);
+    }
+    50% {
+        transform: translate(0, -50px);
+    }
+    75% {
+        transform: translate(-50px, -30px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Enhanced icon animations */
+.animated-icon {
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+    transition: all 0.3s ease;
+}
+
+.animated-icon:hover {
+    color: #00bcd4;
+    text-shadow: 
+        0 0 10px rgba(0, 188, 212, 0.5),
+        0 0 20px rgba(0, 188, 212, 0.3),
+        0 0 30px rgba(0, 188, 212, 0.1);
+    transform: scale(1.2) rotate(8deg);
+}
+
+.landing-page {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/* .landing-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+} */
+
+.left-section,
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.left-section {
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 5%;
+    z-index: 2;
+}
+
+.left-section h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin: 0;
+    color: #4dffd5;  /* Bright cyan */
+    line-height: 1.2;
+}
+
+.left-section h3 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 500;
+    margin: 0;
+    color: #a0a0a0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.right-section {
+    right: 5%;
+}
+
+/* Typewriter Styles */
+.typewriter {
+    color: white;  /* Make typewriter text white */
+    display: inline-flex;
+    align-items: center;
+}
+
+#typewriter-text {
+    font-weight: bold;
+}
+
+.cursor {
+    font-weight: normal;
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .landing-page {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .left-section {
+        flex: 1;
+        padding: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .left-section h3 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .typewriter {
+        justify-content: center;
+    }
+
+    .right-section {
+        flex: 1;
+        min-height: 300px;
+    }
+
+    .icon-container {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+    .landing-page {
+        padding: 0.5rem;
+    }
+
+    .right-section {
+        min-height: 250px;
+    }
+
+    .icon-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .animated-icon {
+        font-size: 1.2rem;
+    }
+
+    @keyframes orbit {
+        0% {
+            transform: rotate(0deg) translateX(80px) rotate(0deg) scale(1);
+        }
+        50% {
+            transform: rotate(180deg) translateX(80px) rotate(-180deg) scale(1.2);
+        }
+        100% {
+            transform: rotate(360deg) translateX(80px) rotate(-360deg) scale(1);
+        }
+    }
+}
+
+.right-section {
+    flex: 0.7;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    overflow: visible;
+}
+
+.right-section img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: clamp(200px, 30vw, 250px);
+    height: clamp(200px, 30vw, 250px);
+    object-fit: cover;
+    border-bottom: 2px solid rgba(0, 187, 212, 0.7);
+}
+
+.image-container {
+    position: relative;
+    width: clamp(200px, 30vw, 250px);
+    height: clamp(200px, 30vw, 250px);
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50px;
+    background: linear-gradient(
+        45deg,
+        rgba(0, 188, 212, 0.3),
+        transparent 40%,
+        transparent 60%,
+        rgba(33, 150, 243, 0.3)
+    );
+    z-index: 3;
+    mix-blend-mode: overlay;
+    animation: gradient-rotate 8s linear infinite;
+    transform: scale(1.2);
+}
+
+/* @keyframes gradient-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+.image-container:hover::before {
+    animation-play-state: paused;
+}
+
+.image-container:hover img {
+    transform: translate(-50%, -50%) scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.icon-container {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background: transparent;
+    border-radius: 0;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    animation: none;
+}
+
+/* Remove bubble pulse animation */
+@keyframes bubble-pulse {
+    0%, 100% {
+        box-shadow: none;
+        border-color: transparent;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        box-shadow: none;
+        border-color: transparent;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Update responsive sizing */
+@media (max-width: 768px) {
+    .icon-container {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .icon-container {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.animated-icon {
+    position: absolute;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    animation: float-icons 8s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.4));
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* Update icon positions - spread out more */
+.icon-container .animated-icon:nth-child(1) { left: 15%; top: 15%; animation-delay: 0s; }      /* HTML */
+.icon-container .animated-icon:nth-child(2) { left: 75%; top: 15%; animation-delay: -1s; }     /* CSS */
+.icon-container .animated-icon:nth-child(3) { left: 15%; top: 75%; animation-delay: -2s; }     /* Python */
+.icon-container .animated-icon:nth-child(4) { left: 75%; top: 75%; animation-delay: -3s; }     /* React */
+.icon-container .animated-icon:nth-child(5) { left: 45%; top: 8%; animation-delay: -4s; }     /* Node */
+.icon-container .animated-icon:nth-child(6) { left: 45%; top: 85%; animation-delay: -5s; }     /* Code */
+.icon-container .animated-icon:nth-child(7) { left: 10%; top: 45%; animation-delay: -6s; }     /* JS */
+.icon-container .animated-icon:nth-child(8) { left: 80%; top: 45%; animation-delay: -7s; }     /* GitHub */
+.icon-container .animated-icon:nth-child(9) { left: 20%; top: 25%; animation-delay: -1.5s; }   /* Angular */
+.icon-container .animated-icon:nth-child(10) { left: 65%; top: 25%; animation-delay: -2.5s; }  /* Server */
+.icon-container .animated-icon:nth-child(11) { left: 20%; top: 65%; animation-delay: -3.5s; }  /* NPM */
+.icon-container .animated-icon:nth-child(12) { left: 55%; top: 30%; animation-delay: -4.5s; }  /* Terminal */
+.icon-container .animated-icon:nth-child(13) { left: 20%; top: 45%; animation-delay: -5.5s; }  /* Git */
+.icon-container .animated-icon:nth-child(14) { left: 70%; top: 45%; animation-delay: -6.5s; }  /* Cloud */
+.icon-container .animated-icon:nth-child(15) { left: 60%; top: 45%; animation-delay: -7.5s; }  /* Docker */
+
+/* Restore original floating animation */
+@keyframes float-icons {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0);
+        filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.3));
+    }
+    25% {
+        transform: translateY(-6px) translateX(6px) rotate(5deg);
+        filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
+    }
+    50% {
+        transform: translateY(0) translateX(8px) rotate(0);
+        filter: drop-shadow(0 0 15px rgba(0, 188, 212, 0.7));
+    }
+    75% {
+        transform: translateY(6px) translateX(6px) rotate(-5deg);
+        filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(0);
+        filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.3));
+    }
+}
+
+/* Restore hover effects */
+.animated-icon:hover {
+    color: #00bcd4;
+    filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.8));
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+/* Default nav-button style with transparent background */
+.nav-button {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: rgba(0, 188, 212, 0.1);
+    border: 2px solid #00bcd4;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.nav-button:hover {
+    background: rgba(0, 188, 212, 0.2);
+    transform: translate(-50%, -2px);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+}
+
+/* When navbar is active, update nav-button */
+.nav-bar.active ~ .nav-button {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* On hover, update nav-button when navbar is active */
+.nav-bar.active ~ .nav-button:hover {
+    background: white;  
+    color: black;  
+    border: 2px solid white;  
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* On hover, default state */
+.nav-button:hover {
+    background: white;
+    color: black;
+    border-color: white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+
+/* Navbar Styles */
+.nav-bar {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: rgba(0, 188, 212, 0.1);
+    border: 2px solid #00bcd4;
+    border-radius: 25px;
+    padding: 8px 12px;
+    backdrop-filter: blur(5px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-bar.active {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    pointer-events: all;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
+}
+
+.nav-bar .left-part {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+}
+
+.nav-bar a:hover {
+    color: #00bcd4;
+    transform: translateY(-2px);
+}
+
+/* Icon size styles */
+.nav-bar ion-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* Optional hover effect for icons */
+.nav-bar ion-icon:hover {
+    transform: translateY(-3px);
+    color: #00bcd4;
+    filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
+}
+
+a {
+    position: relative;
+    display: inline-block;
+}
+
+a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 0 8px 0 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+a:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-2px);
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+a:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Add floating animation for the profile picture */
+@keyframes float {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        transform: translate(-50%, -55%) scale(1.02);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Add hover effect */
+.right-section img:hover {
+    border-bottom-color: rgba(0, 188, 212, 0.8);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+    transform: translate(-50%, -52%) scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Optional: Add a subtle gradient overlay */
+.right-section::before {
+    display: none;
+}
+
+/* Add neon pulse animation */
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 
+            0 0 10px rgba(0, 188, 212, 0.5),
+            0 0 20px rgba(0, 188, 212, 0.3),
+            0 0 30px rgba(0, 188, 212, 0.1),
+            inset 0 0 10px rgba(0, 188, 212, 0.5);
+    }
+    50% {
+        box-shadow: 
+            0 0 20px rgba(0, 188, 212, 0.8),
+            0 0 40px rgba(0, 188, 212, 0.6),
+            0 0 60px rgba(0, 188, 212, 0.4),
+            inset 0 0 20px rgba(0, 188, 212, 0.8);
+    }
+    100% {
+        box-shadow: 
+            0 0 10px rgba(0, 188, 212, 0.5),
+            0 0 20px rgba(0, 188, 212, 0.3),
+            0 0 30px rgba(0, 188, 212, 0.1),
+            inset 0 0 10px rgba(0, 188, 212, 0.5);
+    }
+}
+
+/* Remove the disc effect */
+.image-container::after {
+    display: none;
+}
+
+/* Restore icon container and animations */
+.icon-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.animated-icon {
+    position: absolute;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    animation: float-icons 8s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.4));
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* Position icons at different spots */
+.animated-icon:nth-child(1) { /* HTML */
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.animated-icon:nth-child(2) { /* CSS */
+    top: 20%;
+    right: 20%;
+    animation-delay: -1s;
+}
+
+.animated-icon:nth-child(3) { /* Python */
+    bottom: 20%;
+    left: 20%;
+    animation-delay: -2s;
+}
+
+.animated-icon:nth-child(4) { /* Code */
+    bottom: 20%;
+    right: 20%;
+    animation-delay: -3s;
+}
+
+.animated-icon:nth-child(5) { /* JavaScript */
+    top: 50%;
+    right: 15%;
+    animation-delay: -4s;
+}
+
+/* Restore original floating animation */
+@keyframes float-icons {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0);
+        filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.3));
+    }
+    25% {
+        transform: translateY(-6px) translateX(6px) rotate(5deg);
+        filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
+    }
+    50% {
+        transform: translateY(0) translateX(8px) rotate(0);
+        filter: drop-shadow(0 0 15px rgba(0, 188, 212, 0.7));
+    }
+    75% {
+        transform: translateY(6px) translateX(6px) rotate(-5deg);
+        filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
+    }
+    100% {
+        transform: translateY(0) translateX(0) rotate(0);
+        filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.3));
+    }
+}
+
+/* Restore hover effects */
+.animated-icon:hover {
+    color: #00bcd4;
+    filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.8));
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.image-container:hover img {
+    transform: translate(-50%, -50%) scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Remove button hover effects */
+.nav-button:hover,
+.nav-bar.active ~ .nav-button:hover {
+    background: rgba(20, 20, 20, 0.514);
+    color: white;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Add hover effect for navbar icons too */
+.nav-bar ion-icon {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-bar ion-icon:hover {
+    transform: translateY(-3px);
+    color: #00bcd4;
+    filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5));
+}
+
+/* Optional: Add hover effect for navbar links */
+.nav-bar a {
+    transition: all 0.3s ease;
+}
+
+.nav-bar a:hover ion-icon {
+    transform: translateY(-3px);
+    color: #00bcd4;
+}
+
+/* Projects Section Styles */
+.projects-section {
+    min-height: 100vh;
+    padding: 40px 10% 40px;
+    /* background: rgba(0, 0, 0, 0.95); */
+    position: relative;
+}
+
+/* Back Home Button */
+.projects-section .nav-button {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Adjust project cards for better spacing */
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    max-width: 450px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 188, 212, 0.2);
+    border-color: rgba(0, 188, 212, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.project-content h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.project-tech span {
+    background: rgba(0, 188, 212, 0.1);
+    color: #00bcd4;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 12px;
+}
+
+.project-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: #00bcd4;
+}
+
+/* Ensure proper spacing at the bottom */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .projects-container {
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        margin: 15px 0 40px;
+    }
+}
+
+/* Update project section title */
+.section-title {
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 20px 0 60px;
+    background: linear-gradient(45deg, #00bcd4, #2196f3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 20px rgba(0, 188, 212, 0.2);
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* Style the back home button */
+.back-home {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 10px 20px;
+    background: rgba(0, 188, 212, 0.1);
+    border: 2px solid #00bcd4;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.back-home ion-icon {
+    font-size: 1.2rem;
+}
+
+.back-home:hover {
+    background: rgba(0, 188, 212, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+}
+
+/* Remove old nav button styles for projects page */
+.projects-section .nav-button {
+    display: none;
+}
+
+/* Cool expanding animation for navbar items */
+.nav-bar.active a {
+    animation: popIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+/* Stagger the animation for each icon */
+.nav-bar.active a:nth-child(1) { animation-delay: 0.1s; }
+.nav-bar.active a:nth-child(2) { animation-delay: 0.15s; }
+.nav-bar.active a:nth-child(3) { animation-delay: 0.2s; }
+.nav-bar.active a:nth-child(4) { animation-delay: 0.25s; }
+.nav-bar.active a:nth-child(5) { animation-delay: 0.3s; }
+.nav-bar.active a:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Style for close button */
+.nav-close {
+    color: #ff4444;
+    cursor: pointer;
+    margin-left: 6px;
+    padding: 5px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+}
+
+.nav-close:hover {
+    transform: rotate(90deg);
+    color: #ff2020;
+    filter: drop-shadow(0 0 5px rgba(255, 68, 68, 0.5));
+}
+
+/* Add hover effect for icon container */
+.image-container {
+    position: relative;
+    width: clamp(200px, 30vw, 250px);
+    height: clamp(200px, 30vw, 250px);
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+
+/* Update icon styles */
+.animated-icon {
+    position: absolute;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    animation: float-icons 8s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.4));
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* Add hover effects */
+.image-container:hover ~ .icon-container .animated-icon {
+    filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.6));
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Define hover positions for each icon */
+.image-container:hover ~ .icon-container .animated-icon:nth-child(1) { transform: translate(-20px, -20px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(2) { transform: translate(20px, -20px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(3) { transform: translate(-20px, 20px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(4) { transform: translate(20px, 20px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(5) { transform: translateY(-25px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(6) { transform: translateY(25px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(7) { transform: translateX(-25px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(8) { transform: translateX(25px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(9) { transform: translate(-15px, -15px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(10) { transform: translate(15px, -15px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(11) { transform: translate(-15px, 15px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(12) { transform: translate(15px, 15px); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(13) { transform: translate(-20px, 0); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(14) { transform: translate(20px, 0); }
+.image-container:hover ~ .icon-container .animated-icon:nth-child(15) { transform: scale(1.2); }
+
+/* Add individual hover effects for icons */
+.animated-icon:hover {
+    transform: scale(1.3) !important;
+    color: #00bcd4 !important;
+    filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.8)) !important;
+    cursor: pointer;
+}
+
+/* Remove any existing hover transforms from icon container */
+.icon-container:hover .animated-icon {
+    transform: none;
+}
+
+.highlight-name {
+    background: linear-gradient(45deg, #00ffea, #00bcd4, #2196f3, #673ab7);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 8s ease infinite;
+    text-shadow: 
+        0 0 10px rgba(0, 188, 212, 0.3),
+        0 0 20px rgba(0, 188, 212, 0.2);
+    filter: drop-shadow(0 0 15px rgba(0, 188, 212, 0.3));
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 188, 212, 0.2);
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ff4444;
+    transform: rotate(90deg);
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 188, 212, 0.5);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Project Details Styles */
+.project-details {
+    padding: 15px;
+    color: white;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    background: linear-gradient(45deg, #00ffea, #00bcd4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #a0a0a0;
+}
+
+.modal-tech {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.modal-tech span {
+    background: rgba(0, 188, 212, 0.1);
+    color: #00bcd4;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+/* Add GitHub and Live links to modal instead */
+.modal-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #00bcd4;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(0, 188, 212, 0.1);
+    transition: all 0.3s ease;
+}
+
+.modal-links a:hover {
+    background: rgba(0, 188, 212, 0.2);
+    transform: translateY(-2px);
+}
+
+.modal-links ion-icon {
+    font-size: 1.2rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+    }
+
+    .slider-container {
+        height: 200px;
+    }
+}
+
+/* Experience Section Styles */
+.experience-section {
+    min-height: 100vh;
+    width: 100vw;
+    padding: 60px 10% 40px;
+    /* background: rgba(0, 0, 0, 0.95); */
+    position: relative;
+}
+
+.experience-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.experience-box {
+    /* margin: 0 5% 0 5%; */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #00bcd4, #2196f3);
+    border-radius: 4px;
+}
+
+.experience-box:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 30px rgba(0, 188, 212, 0.2);
+    border-color: rgba(0, 188, 212, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.exp-header {
+    margin-bottom: 15px;
+}
+
+.exp-header h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.company {
+    display: block;
+    color: #00bcd4;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.duration {
+    display: block;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.exp-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.exp-details li {
+    color: #e0e0e0;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.exp-details li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: #00bcd4;
+}
+
+.exp-tech {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.exp-tech span {
+    background: rgba(0, 188, 212, 0.1);
+    color: #00bcd4;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .experience-timeline {
+        padding: 10px;
+    }
+
+    .experience-box {
+        padding: 20px;
+    }
+
+    .exp-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .company {
+        font-size: 1rem;
+    }
+
+    .exp-details li {
+        font-size: 0.9rem;
+    }
+}
+
