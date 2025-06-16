@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
     const element = document.querySelector('#typewriter-text');
     const words = [
-        'a Passionate Frontend Developer',
+        'a Passionate Web Developer',
         'an Aspiring Fullstack Developer',
-        'Learning MERN+MEAN stack'
+        'Learning Cloud based MERN+MEAN stack with AI/ML integration'
         // Add your own words here
     ];
     
