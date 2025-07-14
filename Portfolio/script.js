@@ -149,7 +149,7 @@ const projects = [
         description: "A chatbot-based ticket booking system for museums that streamlines the booking process and provides instant assistance to visitors. The system handles ticket reservations, provides museum information, and manages visitor queries efficiently using natural language processing.",
         images: ["./assets/Screenshot (44).png","./assets/Screenshot (45).png", "./assets/Screenshot (46).png", "./assets/Screenshot (47).png", "./assets/Screenshot (49).png","./assets/Screenshot (48).png"],
         tech: ["React+Vite", "Python", "CSS", "Node.js", "JSON", "MongoDB"],
-        github: "#",
+        github: "https://github.com/indranilsaha2003/TIXIE_CHATBOT",
         live: "#"
     },
     {
@@ -157,7 +157,7 @@ const projects = [
         description: "An automated timetable generation system that creates optimal schedules for educational institutions. The system considers various constraints like teacher availability, room allocation, and subject requirements to generate conflict-free timetables. Features include drag-and-drop interface and real-time updates.",
         images: ["./assets/Screenshot (50).png","./assets/Screenshot (51).png","./assets/Screenshot (52).png","./assets/Screenshot (53).png","./assets/Screenshot (54).png","./assets/Screenshot (55).png"],
         tech: ["React+Vite", "Typescript", "Node.js", "SQL", "Tailwind CSS", "JSON"],
-        github: "#",
+        github: "https://github.com/indranilsaha2003/Innovathon",
         live: "#"
     },
     {
@@ -165,8 +165,8 @@ const projects = [
         description: "A comprehensive travel and tourism website that helps users discover destinations, plan trips, and book travel services. Features include destination guides, booking systems, interactive maps, and user reviews. The site provides a seamless experience for travel planning.",
         images: ["./assets/Screenshot (56).png","./assets/Screenshot (57).png","./assets/Screenshot (58).png","./assets/Screenshot (59).png","./assets/Screenshot (60).png"],
         tech: ["HTML", "CSS", "Javascript"],
-        github: "#",
-        live: "#"
+        github: "https://github.com/indranilsaha2003/VoyageVers-deploy",
+        live: "https://voyage-vers-deploy.vercel.app/"
     },
     {
         title: "Calculator",
@@ -183,7 +183,26 @@ const projects = [
         tech: ["HTML", "CSS", "Javascript"],
         github: "#",
         live: "#"
-    }
+    },
+    {
+        title: "Portfolio Builder",
+        description: "A resume-building web application with a user-friendly interface that lets users create, manage, and export ATS-friendly resumes. Features include secure authentication using JWT (JSON Web Tokens), real-time previews, PDF export, cloud sync, and offline support using modern web technologies",
+        images: [
+            "./assets/Screenshot 2025-07-10 025822.png",
+            "./assets/Screenshot 2025-07-10 025904.png",
+            "./assets/Screenshot 2025-07-10 025926.png",
+            "./assets/Screenshot 2025-07-10 030019.png",
+            "./assets/Screenshot 2025-07-10 030625.png",
+            "./assets/Screenshot 2025-07-10 030750.png",
+            "./assets/Screenshot 2025-07-10 030831.png",
+            "./assets/Screenshot 2025-07-10 030909.png",
+            "./assets/Screenshot 2025-07-10 031010.png",
+            "./assets/Screenshot 2025-07-10 031408.png"
+        ],
+        tech: ["React+Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "jsPDF"],
+        github: "https://github.com/indranilsaha2003/Portfolio_Builder",
+        live: "https://portfolio-builder-ykd1.vercel.app/"
+    },
 ];
 
 // Modal and slider functionality
