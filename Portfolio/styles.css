@@ -301,9 +301,15 @@ body::before {
     font-weight: 500;
     margin: 0;
     color: #a0a0a0;
+    display: block;
+    text-align: left;
+}
+
+.typewriter-container {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .right-section {
@@ -319,17 +325,19 @@ body::before {
 /* Typewriter Styles */
 .typewriter {
     color: white;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    width: 100%;
-    justify-content: center;
+    flex: 1;
+    min-width: 0;
 }
 
 #typewriter-text {
     font-weight: bold;
-    text-align: center;
+    text-align: left;
     word-wrap: break-word;
     hyphens: auto;
+    flex: 1;
+    min-width: 0;
 }
 
 .cursor {
@@ -575,7 +583,7 @@ a {
 a::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 100%;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.85);
@@ -588,26 +596,28 @@ a::after {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     pointer-events: none;
+    z-index: 10000;
 }
 
 a:hover::after {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(-2px);
+    transform: translateX(-50%) translateY(2px);
 }
 
 a::before {
     content: '';
     position: absolute;
-    bottom: 120%;
+    top: calc(100% + 4px);
     left: 50%;
     transform: translateX(-50%);
     border-width: 4px;
     border-style: solid;
-    border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
+    border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10000;
 }
 
 a:hover::before {
@@ -1125,11 +1135,14 @@ a:hover::before {
     }
 
     .left-section h3 {
+        min-height: 60px;
+        text-align: center;
+    }
+    
+    .typewriter-container {
         flex-direction: column;
         align-items: center;
         gap: 0.3rem;
-        min-height: 60px;
-        display: flex;
         justify-content: center;
     }
 
@@ -1184,11 +1197,14 @@ a:hover::before {
     }
 
     .left-section h3 {
+        min-height: 55px;
+        text-align: center;
+    }
+    
+    .typewriter-container {
         flex-direction: column;
         align-items: center;
         gap: 0.2rem;
-        min-height: 55px;
-        display: flex;
         justify-content: center;
     }
 
@@ -1245,11 +1261,14 @@ a:hover::before {
 
     .left-section h3 {
         font-size: 0.8rem;
+        min-height: 50px;
+        text-align: center;
+    }
+    
+    .typewriter-container {
         flex-direction: column;
         align-items: center;
         gap: 0.2rem;
-        min-height: 50px;
-        display: flex;
         justify-content: center;
     }
 
@@ -1325,7 +1344,10 @@ a:hover::before {
     .left-section h3 {
         font-size: 0.7rem;
         min-height: 45px;
-        display: flex;
+        text-align: center;
+    }
+    
+    .typewriter-container {
         justify-content: center;
     }
 
