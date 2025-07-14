@@ -517,7 +517,7 @@ body::before {
     z-index: 999;
     opacity: 0;
     pointer-events: none;
-    max-width: calc(100vw - 40px);
+    max-width:max-content;
     overflow-x: auto;
     overflow-y: visible;
 }
