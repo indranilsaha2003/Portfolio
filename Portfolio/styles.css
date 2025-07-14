@@ -583,7 +583,7 @@ a {
 a::after {
     content: attr(data-tooltip);
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.85);
@@ -596,19 +596,19 @@ a::after {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     pointer-events: none;
-    z-index: 10000;
+    z-index: 10001;
 }
 
 a:hover::after {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(2px);
+    transform: translateX(-50%) translateY(-2px);
 }
 
 a::before {
     content: '';
     position: absolute;
-    top: calc(100% + 4px);
+    bottom: calc(100% - 4px);
     left: 50%;
     transform: translateX(-50%);
     border-width: 4px;
@@ -617,7 +617,7 @@ a::before {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10000;
+    z-index: 10001;
 }
 
 a:hover::before {
