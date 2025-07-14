@@ -526,8 +526,7 @@ body::before {
     opacity: 0;
     pointer-events: none;
     max-width:max-content;
-    overflow-x: auto;
-    overflow-y: visible;
+    overflow: visible;
 }
 
 .nav-bar.active {
@@ -543,6 +542,7 @@ body::before {
     gap: clamp(2px, 1vw, 4px);
     min-width: max-content;
     justify-content: center;
+    overflow: visible;
 }
 
 .nav-bar a {
@@ -555,6 +555,7 @@ body::before {
     display: inline-flex;
     align-items: center;
     height: 24px;
+    overflow: visible;
 }
 
 .nav-bar a:hover {
@@ -578,6 +579,7 @@ body::before {
 a {
     position: relative;
     display: inline-block;
+    overflow: visible;
 }
 
 a::after {
@@ -596,7 +598,8 @@ a::after {
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     pointer-events: none;
-    z-index: 10001;
+    z-index: 99999;
+    margin-bottom: 8px;
 }
 
 a:hover::after {
@@ -617,7 +620,8 @@ a::before {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 10001;
+    z-index: 99999;
+    margin-bottom: 4px;
 }
 
 a:hover::before {
@@ -1163,6 +1167,7 @@ a:hover::before {
         width: 90%;
         padding: 8px 10px;
         bottom: 20px;
+        overflow: visible;
     }
 
     .nav-button {
@@ -1224,6 +1229,7 @@ a:hover::before {
         width: 95%;
         padding: 6px 8px;
         bottom: 15px;
+        overflow: visible;
     }
 
     .nav-button {
@@ -1293,6 +1299,7 @@ a:hover::before {
         width: 98%;
         padding: 5px 6px;
         bottom: 10px;
+        overflow: visible;
     }
 
     .nav-button {
@@ -1360,6 +1367,7 @@ a:hover::before {
         width: 100%;
         padding: 4px;
         bottom: 5px;
+        overflow: visible;
     }
 
     .nav-button {
@@ -1458,5 +1466,24 @@ a:hover::before {
     .projects-section,
     .experience-section {
         background: white !important;
+    }
+}
+
+/* Ensure body and html don't clip tooltips */
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Ensure tooltips work on mobile by adding more space */
+@media (max-width: 767px) {
+    a::after {
+        margin-bottom: 12px;
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
+    
+    a::before {
+        margin-bottom: 8px;
     }
 }
